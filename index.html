@@ -5,12 +5,62 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./style.css">
   <script src="./index.js"></script>
   <title>Twitter Profile Clone</title>
 </head>
 
 <body>
+  <main>
+    <header class="flex-row">
+      <a class="flex-row flex-ctr" href="#">
+        <img src="./assets/icons8-up-arrow-32.png" alt="back-arrow" id="back-arrow">
+      </a>
+      <div class="flex-col">
+        <span class="flex-row">
+          <h2>User's Name</h2>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png"
+            alt="" class="verified-icon">
+        </span>
+        <h3>## Tweets</h3>
+      </div>
+    </header>
+    <section class="banner">
+      <div class="profile-div"></div>
+    </section>
+    <section class="about flex-row">
+      <div class="user-info">
+        <span class="flex-row">
+          <h2>User's Name</h2>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png"
+            alt="" class="verified-icon">
+        </span>
+        <h3>@usertag</h3>
+        <div class="flex-row joined-row">
+          <img src="https://blog.youversion.com/wp-content/uploads/2015/11/calendar-gray.png" class="icon" alt="">
+          <h3>Joined Date</h3>
+        </div>
+        <div class="flex-row" id='follow-info'>
+          <h3 class="follow-stats">
+            ##
+          </h3>
+          <h3>
+            Following
+          </h3>
+          <h3 class="follow-stats">
+            ##
+          </h3>
+          <h3>
+            Followers
+          </h3>
+        </div>
+      </div>
+      <button class="follow-btn clickable">Following</button>
+    </section>
 
+  </main>
 </body>
 
 </html>

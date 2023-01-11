@@ -1,0 +1,146 @@
+* {
+  border: none;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+
+:root {
+  --twitter-blue: #01AEFF;
+}
+
+body,
+html {
+  height: 100vh;
+  width: 100vw;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  padding: 0 5%;
+  margin: 0 auto;
+}
+
+main {
+  border: 1px solid #f1f1f1;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Header Section */
+header {
+  align-items: center;
+  position: relative;
+  height: 70px;
+}
+
+header a:first-child {
+  height: 100%;
+  width: 15%;
+}
+
+#back-arrow {
+  rotate: -90deg;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+h3 {
+  color: #787878;
+  font-weight: 500;
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  background: red;
+  height: 300px;
+  position: relative;
+}
+
+.banner .profile-div {
+  height: 70%;
+  width: 200px;
+  height: 200px;
+  border: 7px solid white;
+  position: absolute;
+  bottom: -35%;
+}
+
+/* About Section */
+
+section.about {
+  justify-content: space-between;
+}
+
+.about div.user-info {
+  width: 50%;
+  padding-top: 110px;
+}
+
+.about .follow-btn {
+  color: white;
+  background: var(--twitter-blue);
+  padding: 0px 25px;
+  height: 60px;
+  font-size: 23px;
+  margin-top: 15px;
+  border-radius: 40px;
+  font-weight: 800;
+}
+
+.joined-row {
+  margin-top: 15px;
+}
+
+.follow-stats {
+  color: black;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+#follow-info h3:nth-child(2) {
+  margin-right: 10px;
+}
+
+
+/* utilities */
+.flex-row {
+  display: flex;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-ctr {
+  align-items: center;
+  justify-content: center;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+header,
+section {
+  padding: 0 25px;
+}
+
+/* Assets */
+.verified-icon {
+  height: inherit;
+  height: 30px;
+  margin-left: 2px;
+}
+
+.profile-div {
+  background: red;
+  border-radius: 50%;
+}
+
+.icon {
+  height: 1.5em;
+  margin-right: 5px;
+}
