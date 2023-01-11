@@ -22,9 +22,13 @@ body {
 }
 
 main {
-  border: 1px solid #f1f1f1;
+  border: 2px solid #f1f1f1;
   max-width: 900px;
   margin: 0 auto;
+}
+
+main>* {
+  padding: 0 25px;
 }
 
 /* Header Section */
@@ -36,13 +40,14 @@ header {
 
 header a:first-child {
   height: 100%;
-  width: 15%;
+  width: 10%;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 #back-arrow {
   rotate: -90deg;
   display: inline-block;
-  margin: 0 auto;
 }
 
 h3 {
@@ -103,6 +108,18 @@ section.about {
   margin-right: 10px;
 }
 
+/* Navigation */
+nav {
+  background: yellow;
+}
+
+nav ul {
+  justify-content: space-between;
+}
+
+nav ul li {
+  list-style: none;
+}
 
 /* utilities */
 .flex-row {
@@ -121,11 +138,6 @@ section.about {
 
 .clickable {
   cursor: pointer;
-}
-
-header,
-section {
-  padding: 0 25px;
 }
 
 /* Assets */
