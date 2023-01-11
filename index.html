@@ -6,7 +6,6 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./style.css">
-  <script src="./index.js"></script>
   <title>Twitter Profile Clone</title>
 </head>
 
@@ -18,29 +17,28 @@
       </a>
       <div class="flex-col">
         <span class="flex-row">
-          <h2>User's Name</h2>
+          <h2 class="user-display-name"></h2>
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png"
             alt="" class="verified-icon">
         </span>
-        <h3>## Tweets</h3>
       </div>
     </header>
-    <section class="banner">
+    <section id="banner">
       <div class="profile-div"></div>
     </section>
     <section class="about flex-row">
       <div class="user-info">
         <span class="flex-row">
-          <h2>User's Name</h2>
+          <h2 class="user-display-name"></h2>
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png"
             alt="" class="verified-icon">
         </span>
-        <h3>@usertag</h3>
+        <h3 class="usertag"></h3>
         <div class="flex-row joined-row">
           <img src="https://blog.youversion.com/wp-content/uploads/2015/11/calendar-gray.png" class="icon" alt="">
-          <h3>Joined Date</h3>
+          <h3 id="join-date"></h3>
         </div>
         <div class="flex-row" id='follow-info'>
           <h3 class="follow-stats">
@@ -68,39 +66,9 @@
       </ul>
     </nav>
     <section class="feed">
-      <div class="tweet">
-        <div class="first-row flex-row">
-          <div class="profile-div"></div>
-          <div class="flex-col">
-            <div class="flex-row top-row">
-              <h3>User's Name</h3>
-              <img
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png"
-                alt="" class="verified-icon">
-              <h3>@usertag</h3>
-              <h3>##m</h3>
-              <div class="ellipses">
-                <div class="dot dot1"></div>
-                <div class="dot dot2"></div>
-                <div class="dot dot3"></div>
-              </div>
-            </div>
-            <p class="tweet-text">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-            </p>
-          </div>
-        </div>
-        <div class="interactions">
-          <ul>
-            <li><img src="./assets/icons8-speech-32.png" class="chat icon">##K</li>
-            <li><img src="./assets/icons8-retweet-32.png" class="retweet icon">##K</li>
-            <li><img class="like icon" src="./assets/icons8-favorite-30.png" />##K</li>
-            <li><img class="share icon" src="./assets/icons8-share-rounded-30.png" /></li>
-          </ul>
-        </div>
-      </div>
     </section>
   </main>
+  <script src="./index.js"></script>
 </body>
 
 </html>

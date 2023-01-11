@@ -26,6 +26,7 @@ main {
   border: 2px solid #f1f1f1;
   max-width: 900px;
   margin: 0 auto;
+  height: 100vh;
 }
 
 main>* {
@@ -58,14 +59,15 @@ h3 {
 }
 
 /* Banner */
-.banner {
+#banner {
   width: 100%;
-  background: red;
   height: 300px;
   position: relative;
+  background-position: center;
+  background-size: cover;
 }
 
-.banner .profile-div {
+#banner .profile-div {
   height: 70%;
   width: 200px;
   height: 200px;
@@ -144,9 +146,14 @@ nav ul li.active a {
 }
 
 /* Tweet Section */
+.feed {
+  padding: 0;
+}
+
 .tweet {
   align-items: center;
-  padding: 15px 0;
+  padding: 15px 25px;
+  border: 1px solid #f1f1f1;
 }
 
 .tweet .profile-div {
@@ -186,6 +193,11 @@ nav ul li.active a {
 .tweet .top-row {
   position: relative;
   width: 100%;
+}
+
+.tweet .top-row h3:first-child {
+  color: black;
+  font-weight: 600;
 }
 
 .first-row .flex-col {
@@ -254,7 +266,8 @@ nav ul li.active a {
 }
 
 .profile-div {
-  background: red;
+  background-position: center;
+  background-size: contain;
   border-radius: 50%;
 }
 

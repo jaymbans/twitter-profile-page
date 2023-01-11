@@ -45,3 +45,94 @@ var user2 = {
         }
     ]
 };
+
+
+// handling dynamic data
+const userData = user1;
+
+// Render user display name
+const usernameElements = document.querySelectorAll('.user-display-name');
+
+for (let element of usernameElements) {
+    element.innerHTML = userData.displayName;
+}
+
+// Render # of tweets
+const tweetCountPlaceholder = document.querySelector('header .flex-col')
+const tweetCount = `<h3>${userData.tweets.length} Tweets</h3>`;
+tweetCountPlaceholder.innerHTML += tweetCount;
+
+// Render Banner Image
+const banner = document.getElementById('banner');
+banner.style.backgroundImage = `url(${userData.coverPhotoURL})`;
+
+
+// Render Join Date
+document.getElementById('join-date').innerHTML = `Joined ${userData.joinedDate}`;
+
+// Render Follow Stats
+const followStats = document.querySelectorAll('.follow-stats');
+const [following, followers] = [followStats[0], followStats[1]];
+following.innerHTML = userData.followingCount;
+followers.innerHTML = userData.followerCount;
+
+// Render Tweet(s)
+const tweetContainer = document.createElement('div');
+tweetContainer.classList.add('tweet')
+
+const renderTweet = (tweetObj) => {
+    console.log(tweetObj)
+    const currentTweet = document.createElement('div');
+    currentTweet.classList.add('tweet');
+    currentTweet.innerHTML = `
+        <div class="first-row flex-row">
+        <div class="profile-div"></div>
+        <div class="flex-col">
+          <div class="flex-row top-row">
+            <h3 class="user-display-name"></h3>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png"
+              alt="" class="verified-icon">
+            <h3 class='usertag'>${userData.userName}</h3>
+            <h3>${tweetObj.timestamp}</h3>
+            <div class="ellipses">
+              <div class="dot dot1"></div>
+              <div class="dot dot2"></div>
+              <div class="dot dot3"></div>
+            </div>
+          </div>
+          <p class="tweet-text">
+            ${tweetObj.text}
+          </p>
+        </div>
+        </div>
+        <div class="interactions">
+        <ul>
+          <li><img src="./assets/icons8-speech-32.png" class="chat icon">##K</li>
+          <li><img src="./assets/icons8-retweet-32.png" class="retweet icon">##K</li>
+          <li><img class="like icon" src="./assets/icons8-favorite-30.png" />##K</li>
+          <li><img class="share icon" src="./assets/icons8-share-rounded-30.png" /></li>
+        </ul>
+        </div>
+        `;
+    return currentTweet;
+}
+
+const feedSection = document.querySelector('section.feed');
+
+userData.tweets.map(tweet => {
+    feedSection.appendChild(renderTweet(tweet));
+})
+
+// Render User @Tag
+const usertagElements = document.querySelectorAll('.usertag');
+
+for (let element of usertagElements) {
+    element.innerHTML = userData.userName;
+}
+
+// Render Avatar
+const avatarElements = document.querySelectorAll('.profile-div');
+for (let element of avatarElements) {
+    element.style.backgroundImage = `url(${userData.avatarURL})`;
+}
