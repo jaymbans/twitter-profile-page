@@ -7,6 +7,7 @@
 
 :root {
   --twitter-blue: #01AEFF;
+  --secondary-color: #575f6b;
 }
 
 body,
@@ -51,8 +52,9 @@ header a:first-child {
 }
 
 h3 {
-  color: #787878;
   font-weight: 500;
+  font-size: 1.3rem;
+  color: var(--secondary-color);
 }
 
 /* Banner */
@@ -95,7 +97,7 @@ section.about {
 }
 
 .joined-row {
-  margin-top: 15px;
+  margin: 22px 0px;
 }
 
 .follow-stats {
@@ -110,15 +112,124 @@ section.about {
 
 /* Navigation */
 nav {
-  background: yellow;
-}
-
-nav ul {
-  justify-content: space-between;
+  border-bottom: 2px solid #f1f1f1;
+  margin-top: 25px;
+  padding: 0px;
 }
 
 nav ul li {
   list-style: none;
+  text-align: center;
+  width: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+}
+
+nav ul li.active {
+  border-bottom: 3px solid var(--twitter-blue);
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+nav ul li.active a {
+  color: var(--twitter-blue)
+}
+
+/* Tweet Section */
+.tweet {
+  align-items: center;
+  padding: 15px 0;
+}
+
+.tweet .profile-div {
+  height: 60px;
+  width: 60px;
+  margin-right: 15px;
+}
+
+.tweet .verified-icon {
+  margin-right: 5px;
+}
+
+.tweet h3:nth-child(3) {
+  position: relative;
+  padding-right: 10px;
+}
+
+.tweet h3:nth-child(4) {
+  padding-left: 8px;
+}
+
+.tweet h3:nth-child(3)::after {
+  content: "";
+  background: var(--secondary-color);
+  height: 3px;
+  width: 3px;
+  border-radius: 50%;
+  position: absolute;
+  top: 12px;
+  right: 0;
+}
+
+.tweet-text {
+  font-size: 20px;
+}
+
+.tweet .top-row {
+  position: relative;
+  width: 100%;
+}
+
+.first-row .flex-col {
+  width: 92%;
+}
+
+.ellipses {
+  height: 100%;
+  width: 5%;
+  right: 0;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.ellipses .dot {
+  height: 5px;
+  width: 5px;
+  border-radius: 50%;
+  background-color: var(--secondary-color);
+  margin: 0 2px;
+}
+
+.interactions {
+  padding-top: 25px;
+}
+
+.interactions ul {
+  display: flex;
+}
+
+.interactions ul li {
+  list-style: none;
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #575f6b;
+}
+
+.interactions .icon {
+  height: 25px;
+  width: 25px;
+  color: var(--secondary-color);
 }
 
 /* utilities */
@@ -129,11 +240,6 @@ nav ul li {
 .flex-col {
   display: flex;
   flex-direction: column;
-}
-
-.flex-ctr {
-  align-items: center;
-  justify-content: center;
 }
 
 .clickable {
