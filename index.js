@@ -46,9 +46,16 @@ var user2 = {
     ]
 };
 
+const userDatabase = {
+    user1,
+    user2
+}
+
 
 // handling dynamic data
-const userData = user1;
+let params = new URLSearchParams(document.location.search);
+
+const userData = userDatabase[params.get('user')];
 
 // Render user display name
 const usernameElements = document.querySelectorAll('.user-display-name');
