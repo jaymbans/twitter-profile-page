@@ -73,15 +73,18 @@ document.getElementById('join-date').innerHTML = `Joined ${userData.joinedDate}`
 // Render Follow Stats
 const followStats = document.querySelectorAll('.follow-stats');
 const [following, followers] = [followStats[0], followStats[1]];
-following.innerHTML = userData.followingCount;
-followers.innerHTML = userData.followerCount;
+following.innerHTML = nFormatter(userData.followingCount);
+followers.innerHTML = nFormatter(userData.followerCount);
 
 // Render Tweet(s)
 const tweetContainer = document.createElement('div');
 tweetContainer.classList.add('tweet')
 
 const renderTweet = (tweetObj) => {
-    console.log(tweetObj)
+    const commentCount = Math.floor(Math.random() * 100000)
+    const retweetCount = Math.floor(Math.random() * 10000)
+    const likeCount = Math.floor(Math.random() * 100000)
+
     const currentTweet = document.createElement('div');
     currentTweet.classList.add('tweet');
     currentTweet.innerHTML = `
@@ -94,7 +97,7 @@ const renderTweet = (tweetObj) => {
               src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Twitter_Verified_Badge.svg/512px-Twitter_Verified_Badge.svg.png"
               alt="" class="verified-icon">
             <h3 class='usertag'>${userData.userName}</h3>
-            <h3>${tweetObj.timestamp}</h3>
+            <h3>${calcTweetedDifference(tweetObj.timestamp)}</h3>
             <div class="ellipses">
               <div class="dot dot1"></div>
               <div class="dot dot2"></div>
@@ -108,9 +111,9 @@ const renderTweet = (tweetObj) => {
         </div>
         <div class="interactions">
         <ul>
-          <li><img src="./assets/icons8-speech-32.png" class="chat icon">##K</li>
-          <li><img src="./assets/icons8-retweet-32.png" class="retweet icon">##K</li>
-          <li><img class="like icon" src="./assets/icons8-favorite-30.png" />##K</li>
+          <li><img src="./assets/icons8-speech-32.png" class="chat icon">${nFormatter(commentCount)}</li>
+          <li><img src="./assets/icons8-retweet-32.png" class="retweet icon">${nFormatter(retweetCount)}</li>
+          <li><img class="like icon" src="./assets/icons8-favorite-30.png" />${nFormatter(likeCount)}</li>
           <li><img class="share icon" src="./assets/icons8-share-rounded-30.png" /></li>
         </ul>
         </div>
@@ -135,4 +138,22 @@ for (let element of usertagElements) {
 const avatarElements = document.querySelectorAll('.profile-div');
 for (let element of avatarElements) {
     element.style.backgroundImage = `url(${userData.avatarURL})`;
+}
+
+
+function nFormatter(num) {
+    const lookup = [
+        { value: 1, symbol: "" },
+        { value: 1e3, symbol: "k" },
+        { value: 1e6, symbol: "M" },
+    ];
+    const rx = /\.0+$|(\.[0-9]*[1-9])0+$/;
+    var item = lookup.slice().reverse().find(function (item) {
+        return num >= item.value;
+    });
+    return item ? (num / item.value).toFixed(1).replace(rx, "$1") + item.symbol : "0";
+}
+
+function calcTweetedDifference(date) {
+    return Math.round((Date.now() - new Date('2/10/2021')) / (1000 * 3600 * 24)) + 'd'
 }
