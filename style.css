@@ -258,6 +258,10 @@ nav ul li.active a {
   cursor: pointer;
 }
 
+.hide-elements {
+  display: none;
+}
+
 /* Assets */
 .verified-icon {
   height: inherit;
