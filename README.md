@@ -16,3 +16,8 @@
   <li>Profile avatars, tweet content and meta information</li>
 </ul>
 
+<h3><a href='https://jaymbans.github.io/twitter-profile-page/'>Demo Here</a></h3>
+<hr>
+<h5><a href='https://jaymbans.github.io/twitter-profile-page/?user=user1' target='_blank'>User 1 Demo</a></h5>
+<h5><a href='https://jaymbans.github.io/twitter-profile-page/?user=user2' target='_blank'>User 2 Demo</a></h5>
+
