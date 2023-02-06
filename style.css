@@ -26,7 +26,6 @@ main {
   border: 2px solid #f1f1f1;
   max-width: 900px;
   margin: 0 auto;
-  height: 100vh;
 }
 
 main>* {
@@ -278,4 +277,64 @@ nav ul li.active a {
 .icon {
   height: 1.5em;
   margin-right: 5px;
+}
+
+/* Media Queries for Smaller Resolutions */
+
+@media only screen and (max-width: 773px) {
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (max-width: 618px) {
+  body {
+    padding: 0;
+  }
+
+  :root {
+    font-size: smaller;
+  }
+
+  #banner .profile-div {
+    width: 100px;
+    height: 100px;
+    border: 2px solid white;
+  }
+
+  .about .follow-btn {
+    padding: 0px 15px;
+    height: 30px;
+    font-size: 19px;
+    border-radius: 40px;
+    font-weight: 400;
+  }
+
+  nav ul li a {
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+
+  nav ul li {
+    margin: auto;
+    height: 50px;
+    width: auto;
+    padding: 0 10px;
+  }
+
+  .tweet {
+    padding: 15px 0px;
+  }
+
+  .ellipses .dot {
+    height: 2px;
+    width: 2px;
+    margin: 0 1px;
+  }
+
+  .tweet-text {
+    font-size: 16px;
+  }
 }
